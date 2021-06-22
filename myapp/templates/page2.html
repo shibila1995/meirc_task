@@ -1,0 +1,597 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My awesome food store</title>
+
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    
+    
+    <script type="text/javascript" src="cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+    <script>
+        // window.initializeCarousel=()=>{
+        //     $("#carouselExampleCaptions").carousel({interval:5000});
+        // }
+        $(document).ready(function () {
+            $('.food-slider').slick({
+                autoplay: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: ".prev-btn",
+                nextArrow: ".next-btn",
+                /*TO DISPLAY ONLY 2 IMAGES SLIDER SCREENSIZE BELOW 992*/
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    /*TO DISPLAY ONLY 1 IMAGES SLIDER SCREENSIZE BELOW 768*/
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+
+            });
+            /*when hamburger icon is clicked whole content moved to right side*/
+            $('.nav-trigger').click(function () {
+                $('.site-content-wrapper').toggleClass('scaled');
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        
+        <!-- to make mobile responsive (mbl navigation )-->
+        <div class="nav-background">
+            <div class="mobile-logo">
+                <!-- Navigation links for mbl -->
+                {% load static %} <img src="{% static 'img1.jpg' %}" alt="home" />
+
+            </div>
+            <div class="mobile-nav">
+
+                <div class="nav-top">
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <a href="#">Courses</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Cities</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact flex items-center">
+                    <img src="./icons/phone.svg" alt="">
+                    <div>
+                        <h5>Call us: (+84) 123 456 789</h5>
+                        <h6>E-mail : support@benjamin.com</h6>
+                    </div>
+                </div>
+                <div class="time flex items-center">
+                    <img src="./icons/clock.svg" alt="">
+                    <div>
+                        <h5>Working Hours:</h5>
+                        <h6>Mon - Sat (8.00am - 12.00am)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-content-wrapper">
+            <div class="nav-trigger">
+                <!-- Hamberger icons -->
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-bar-chart">
+                    <line x1="12" y1="20" x2="12" y2="10" />
+                    <line x1="18" y1="20" x2="18" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="16" />
+                </svg> -->
+            </div>
+            <div class="site-content">
+                <!-- our full content from header to footer is inside this-->
+                <header class="topbar">
+                    <div class="container flex justify-between items-center">
+                        <div class="icons">
+                            <a href="#"><img src="./icons/facebook.svg" alt=""></a>
+                            <a href="#"><img src="./icons/twitter.svg" alt=""></a>
+                            <a href="#"><img src="./icons/google.svg" alt=""></a>
+                            <a href="#"><img src="./icons/instagram.svg" alt=""></a>
+                        </div>
+                        <!-- topbar right side -->
+
+                    </div>
+                </header>
+                <!-- contact n logo  n working hours-->
+                
+                    <div class="top">
+                        <div class="container flex justify-between">
+                            <div class="contact flex items-center">
+                                {% load static %} <img src="{% static 'phone.svg' %}" alt="phone" />
+                                <div>
+                                    <h5>Call US: (+84) 123 456 789</h5>
+                                    <h6>E-mail : support@meirc.com</h6>
+                                </div>
+                            </div>
+                            <div class="branding">
+                                <img src="images/log2.JPG" alt="">
+                            </div>
+                            <nav class="navbar navbar-expand-lg" >
+                                <div class="navbar magic-shadow">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                       
+                                            <!-- Hamberger icons -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-bar-chart">
+                                                <line x1="12" y1="20" x2="12" y2="10" />
+                                                <line x1="18" y1="20" x2="18" y2="4" />
+                                                <line x1="6" y1="20" x2="6" y2="16" />
+                                            </svg>
+                                                            
+                                      </button>
+                                      <div class="collapse navbar-collapse" id="myNavbar">
+                                        <ul class="nav navbar-nav">
+                                            <li class="active"><a class="nav-item nav-link active" href="#">Home</a></li>
+                                            <li class="dropdown">
+                                              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses <span class="caret"></span></a>
+                                              <ul class="dropdown-menu">
+                                                <li><a href="#">Accounting</a></li>
+                                                <li><a href="#">IT management</a></li>
+                                                <li><a href="#">legal</a></li>
+                                              </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cities <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                  <li><a href="#">Dubai</a></li>
+                                                  <li><a href="#">Aub</a></li>
+                                                  <li><a href="#">Rak</a></li>
+                                                </ul>
+                                              </li>
+                                              <li class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                  <li><a href="#">Page 1-1</a></li>
+                                                  <li><a href="#">Page 1-2</a></li>
+                                                  <li><a href="#">Page 1-3</a></li>
+                                                </ul>
+                                              </li>
+                                            
+                                          </ul>
+                                          <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                          </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            
+                            <div class="time flex items-center">
+                                {% load static %} <img src="{% static 'clock.svg' %}" alt="clock" />
+                                <div>
+                                    <h5>Working Hours:</h5>
+                                    <h6>Mon - Sat (8.00am - 12.00am)</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="navbar magic-shadow">
+                        <div class="container items-center">
+                            <a href="#" class="active" >Home</a>
+                            <a href="#">About us</a>
+                            <a href="#">Courses</a>
+                            <a href="#">Services</a>
+                            <a href="#">Gallery</a>
+                            <a href="#">Contact us</a>
+                        </div>
+                                   
+                               
+                    </div> -->
+                    
+                    
+                    
+               
+                <!--welcome section-->
+                <header class="hero flex items-center">
+                    <div class="container">
+                        <div class="welcome flex items-center">
+                            <span>Welcome to</span>
+                            <img src="./icons/logo2.svg" alt="">
+                        </div>
+                        <h1>Meirc  <span>Online Learning </span> Solutions</h1>
+                        <p> Stemming from 60+ years of experience in training and consulting</p>
+                        <div>
+                            <button class="btn btn-primary"><a href="/myapp/page2">Read More</a></button>
+                            <button class="btn btn-secondary">View Gallery</button>
+                        </div>
+                        <div class="hero-image">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </header>
+                <section class="top-products">
+                    <div class="container">
+                        <h1 class="section-heading">Top Courses</h1>
+                        <div class="slider">
+                            <button class="slider-btn prev-btn">{% load static %} <img src="{% static 'pre.svg' %}"
+                                    alt="pre button" /></button>
+                            <button class="slider-btn next-btn">{% load static %} <img src="{% static 'next.svg' %}"
+                                    alt="next button" /></button>
+                            <div class="food-slider">
+                                <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        {% load static %} <img src="{% static 'heart.svg' %}" class="d-block w-100"alt="coffee" />
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5>First slide label</h5>
+                                          <p>Some representative placeholder content for the first slide.</p>
+                                        </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        {% load static %} <img src="{% static 'pasta.jpg' %}" class="d-block w-100"alt="coffee" />
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5>Second slide label</h5>
+                                          <p>Some representative placeholder content for the second slide.</p>
+                                        </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        {% load static %} <img src="{% static 'img1.jpg' %}" class="d-block w-100"alt="coffee" />
+                                        <div class="carousel-caption d-none d-md-block">
+                                          <h5>Third slide label</h5>
+                                          <p>Some representative placeholder content for the third slide.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Next</span>
+                                    </button>
+                                  </div> -->
+                                <!--slider section first card-->
+                                <div class="food-card magic-shadow-sm">
+                                    <div class="product-image flex items-center justify-center">
+                                        {% load static %} <img src="{% static 'coffee.jpg' %}" class="d-block w-100"
+                                            alt="coffee" />
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">Coffee</h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div class="price text-center">
+                                            $ 1.25
+                                        </div>
+                                        <div class="flex justify-center">
+                                            <button>
+                                                <img src="./icons/upcoming-events-calendar.png" alt="">
+                                                <span>Read more</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--slider section second image-->
+                                <div class="food-card magic-shadow-sm">
+                                    <div class="product-image flex items-center justify-center">
+                                        {% load static %} <img src="{% static 'pasta.jpg' %}" class="d-block w-100"
+                                            alt="coffee" />
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">Accounting</h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div class="price text-center">
+                                            $ 1.25
+                                        </div>
+                                        <div class="flex justify-center">
+                                            <button>
+                                                <img src="./icons/upcoming-events-calendar.png" alt="">
+                                                <span>Read more</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="food-card magic-shadow-sm">
+                                    <div class="product-image flex items-center justify-center">
+                                        {% load static %} <img
+                                            src="{% static 'mix-different-nuts-wooden-cup-against-fabric.jpg' %}"
+                                            alt="vinegar" />
+
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">Finance</h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div class="price text-center">
+                                            $ 1.25
+                                        </div>
+                                        <div class="flex justify-center">
+                                            <button>
+                                                <img src="./icons/upcoming-events-calendar.png" alt="">
+                                                <span>Read more</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="food-card magic-shadow-sm">
+                                    <div class="product-image flex items-center justify-center">
+                                        {% load static %} <img src="{% static 'food-and-beverage-ENKWRFS.jpg' %}"
+                                            alt="vinegar" />
+
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">Computer</h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div class="price text-center">
+                                            $ 1.25
+                                        </div>
+                                        <div class="flex justify-center">
+                                            <button>
+                                                <img src="./icons/upcoming-events-calendar.png" alt="">
+                                                <span>Read more</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="text-center btn-wrapper">
+                <button class="btn btn-secondary">View More</button>
+            </div> -->
+                        </div>
+                    
+                    <div class="text-center btn-wrapper">
+                        <button class="btn btn-secondary">View More</button>
+                    </div>
+            </div>
+            </section>
+            <!--about section -->
+          
+            <section class="about-meal">
+                <div class="container">
+                    <h1 class="section-heading">About Us</h1>
+                    <div class="about-meal-wrap flex">
+                        <div class="flex-1">
+                            
+                            {% load static %} <img src="{% static 'yogurt.png' %}"alt="coffee" />
+                        </div>
+                        <div class="flex-1">
+                            <h2>
+                                Global spice merchants since 1920.
+                                Meirc Training & Consulting is the oldest  Since 1958,</h2>
+                            <p>  Meirc Training & Consulting is the oldest and most trusted training firm in the region. Since 1958, we have been relied upon by our clients, small and large, private and public, to develop their human capital in a range of management and technical fields, using an ever-expanding portfolio of products and services. Our innovative and diversified training courses and consulting services are designed and delivered by subject matter experts who are competent in providing solutions relevant to this region and applicable to today’s business challenges.
+
+                                We pride ourselves on our track record and on our long-standing relationships with our clients, many of whom have been with us since we started business..</p>
+                            <button class="btn btn-secondary">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--services section -->
+            <section class="our-services">
+                <div class="container">
+                    <h1 class="section-heading">Our services</h1>
+                    <div class="card-wrapper flex">
+                        <div class="service-card magic-shadow-sm">
+                            {% load static %} <img  class="icon" src="{% static 'transport.svg' %}"alt="phone" />
+                            <h2>Free Home delivery</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <button class="btn btn-secondary">Read More</button>
+                        </div>
+                        <div class="service-card magic-shadow-sm">
+                            {% load static %} <img  class="icon" src="{% static 'bag.svg' %}"alt="phone" />
+                            <h2>Free Home delivery</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <button class="btn btn-secondary">Read More</button>
+                        </div>
+                        
+                        <div class="service-card magic-shadow-sm">
+                            {% load static %} <img  class="icon" src="{% static 'usd.svg' %}"alt="phone" />
+                            <h2>Money Back Guaranted</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <button class="btn btn-secondary">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                <!--customer review section -->
+                <section class="big-deal">
+                    <div class="container">
+                        <h1 class="section-heading text-pure">Customer's Review</h1>
+                        <div class="timer">
+                            <div>
+                                <span>"Fair Price"</span>
+                                <span>John</span>
+                            </div>
+                            <div>
+                                <span>"Good Quality"</span>
+                                <span>Robin</span>
+                            </div>
+                            <div>
+                                <span>"Fast dispatch"</span>
+                                <span>Michael</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--latest news section -->
+<section class="latest-news">
+    <div class="container">
+        <h1 class="section-heading">Lastest News </h1>
+        <div class="article-wrapper">
+            <article class="card magic-shadow-sm">
+                <div>
+                    {% load static %} <img   src="{% static 'coffee.jpg' %}"alt="phone" />
+                </div>
+                <div class="card-content">
+                    <div class="post-meta flex items-center justify-between">
+                        <span>July 03, 2017</span>
+                        <div>
+                            <span>Posted by <strong>benjamin</strong></span>
+                           
+                        </div>
+                    </div>
+    
+                    <h2>Lorem Ipsum is simply dummy text of the printing</h2>
+                    <p>It is a long established fact that a reader will be distracted by the readable
+                        content of a
+                        page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                        more
+                        letters.</p>
+                </div>
+            </article>
+            <article class="card magic-shadow-sm">
+                <div>
+                    {% load static %} <img  src="{% static 'coffee.jpg' %}"alt="phone" />
+                </div>
+                <div class="card-content">
+                    <div class="post-meta flex items-center justify-between">
+                        <span>July 03, 2017</span>
+                        <div>
+                            <span>Posted by <strong>benjamin</strong></span>
+                            
+                        </div>
+                    </div>
+    
+                    <h2>Lorem Ipsum is simply dummy text of the printing</h2>
+                    <p>It is a long established fact that a reader will be distracted by the readable
+                        content of a
+                        page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                        more
+                        letters.</p>
+                </div>
+            </article>
+        </div>
+        <div class="text-center btn-wrapper">
+            <button class="btn btn-secondary">View All</button>
+        </div>
+    </div>
+</section>
+
+<section class="contact-us ">
+    <div class="contact-info-wrapper">
+        <h1 class="section-heading">Contact us</h1>
+        <div class="contact-info ">
+            <div>
+                <div>
+                    {% load static %} <img  src="{% static 'phone.svg' %}"alt="phone" />
+                    <div>
+                        <span>Call us:</span>
+                        <span>(+84) 123 456 789</span>
+                    </div>
+                </div>
+                <div>
+                    {% load static %} <img  src="{% static 'phone.svg' %}"alt="phone" />
+                    <div>
+                        <span>E-mail ::</span>
+                        <span>support@meirc.com</span>
+                    </div>
+                </div>
+                <div>
+                    {% load static %} <img   src="{% static 'clock.svg' %}"alt="phone" />
+                    <div>
+                        <span>Working Hours:</span>
+                        <span>Mon - Sat (8.00am - 12.00am)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+            <footer class="copyright">
+                <div>
+                    Copyright © 2020 .All rights reserved by Think solution.
+                </div>
+            </footer>
+        </div>
+    </div>
+    </div>
+    <!--slider section copy and paste from slick slide website-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

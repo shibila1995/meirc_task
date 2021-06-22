@@ -1,0 +1,273 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My awesome food store</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'style3.css' %}">  
+
+</head>
+
+<body>
+    	<!-- Top Bar -->
+	
+        <header class="topbar">
+            <div class="container flex justify-between items-center">
+                <div class="icons">
+
+                    <a href="#"> {% load static %} <img src="{% static 'phone.svg' %}" alt="phone" /></a>
+                    <a href="#"> {% load static %} <img src="{% static 'email.svg' %}" alt="phone" /></a>
+
+                    <a href="#"><img src="./icons/twitter.svg" alt=""></a>
+                    <a href="#"><img src="./icons/google.svg" alt=""></a>
+                    <a href="#"><img src="./icons/instagram.svg" alt=""></a>
+                    <a href="#"><img src="./icons/search.svg" alt=""></a>
+                </div>
+                <div class="auth flex items-center">
+                    <div>
+                        <img src="./icons/user-icon.svg" alt="">
+                        <a href="#">Log in</a>
+                    </div>
+                    <span class="divider">|</span>
+                    <div>
+                        <img src="./icons/edit.svg" alt="">
+                        <a href="#">Register Now</a>
+                    </div>
+                    <span class="divider">|</span>
+                    
+                </div>
+            </div>
+        </header>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html" class="navbar-brand">
+            {% load static %} <img src="{% static 'logo.png' %}" height =50px 
+            alt="coffee"  /></a>
+       
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav items ">
+            <li class="nav-item  ">
+              <a class="nav-link frst" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>    
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>    
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Courses</a>
+              </li>    
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+            
+          </ul>
+        </div>  
+      </nav>
+      <div class="bodybg">
+        <div class="mt-0">
+       
+            <div class="ml-auto">
+                
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs mt-0">
+                  <li class="nav-item">
+                    <a class="nav-link active mt-0" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#menu1">Menu 1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#menu2">Menu 2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#menu3">Menu 3</a>
+                  </li>
+                </ul>
+              
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div id="home" class="container tab-pane active"><br>
+                    <h3>HOME</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                  <div id="menu1" class="container tab-pane fade"><br>
+                    <h3>Menu 1</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                  <div id="menu2" class="container tab-pane fade"><br>
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                  </div>
+                  <div id="menu3" class="container tab-pane fade"><br>
+                    <h3>Menu 3</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <script>
+              $(document).ready(function(){
+                $(".nav-tabs a").click(function(){
+                  $(this).tab('show');
+                });
+              });
+              </script>
+              
+          </div>
+          
+        
+        <section>
+            <div class="container mt-2">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    
+                            <!-- Indicators -->
+                            <ul class="carousel-indicators">
+                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                              <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ul>
+                            
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                  {% load static %} <img src="{% static 'pasta.jpg' %}"alt="coffee" width="1100" height="500" />
+                                <!-- <img src="la.jpg" alt="Los Angeles" width="1100" height="500"> -->
+                              </div>
+                              <div class="carousel-item">
+                                  {% load static %} <img src="{% static 'yogurt.png' %}"alt="coffee" width="1100" height="500" />
+                                <!-- <img src="chicago.jpg" alt="Chicago" width="1100" height="500"> -->
+                              </div>
+                              <div class="carousel-item">
+                                  {% load static %} <img src="{% static 'the-instant-cof.jpg' %}"alt="coffee" width="1000" height="500" />
+              
+                              </div>
+                            </div>
+                            
+                            <!-- Left and right controls -->
+                            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                              <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                              <span class="carousel-control-next-icon"></span>
+                            </a>
+                          </div>
+                    </div>
+                    <div class="col-md-5 offset-md-1 text-justify">
+                        <h2>
+                            Global spice merchants since 1920.
+                            </h2>
+                        <p>  Meirc Training & Consulting is the oldest and most trusted training firm in the region. Since 1958, we have been relied upon by our clients, small and large, private and public, to develop their human capital in a range of management and technical fields, using an ever-expanding portfolio of products and services. Our innovative and diversified training courses and consulting services are designed and delivered by subject matter experts who are competent in providing solutions relevant to this region and applicable to today’s business challenges.
+    
+                            We pride ourselves on our track record and on our long-standing relationships with our clients, many of whom have been with us since we started business..</p>
+                    </div>
+                </div>
+                
+               
+                
+                
+                </div>
+        </section>
+        
+        <section>
+        
+    
+    <div class="container mt-3">
+      
+      <form>
+        <div class="input-group mt-3 mb-3">
+          <div class="input-group-prepend">
+           <input type="text" class="form-control" placeholder="Search for your courses                     ">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle btncolor" data-toggle="dropdown">
+              Courses
+            </button>
+           
+            <div class="dropdown-menu ml-1">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+            <button type="button" class="btn  btn-outline-secondary dropdown-toggle ml-1 btncolor"  data-toggle="dropdown">
+              Category
+            </button>
+            <div class="dropdown-menu ">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-secondary dropdown-toggle ml-1 btncolor" data-toggle="dropdown">
+              City
+            </button>
+           
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+          <button type="button" class="btn btn-outline-secondary dropdown-toggle ml-1 btncolor" data-toggle="dropdown">
+              Language
+            </button>
+           
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+            <input type="submit" class="btn btn-info" value="Search">
+        </div>
+    </div>
+      </form>
+      <div class="row"> 
+        <div class="column">
+            {% load static %} <img src="{% static 'pasta.jpg' %}"alt="coffee"  />
+            {% load static %} <img src="{% static 'coffee.jpg' %}"alt="coffee" />
+           
+        
+        </div>
+        <div class="column">
+            {% load static %} <img src="{% static 'coffee.jpg' %}"alt="coffee"  />
+            {% load static %} <img src="{% static 'nuts-food-wallpaper-preview.jpg' %}"alt="coffee" />
+            
+        
+        </div> 
+        <div class="column">
+            {% load static %} <img src="{% static 'pasta.jpg' %}"alt="coffee"  />
+            {% load static %} <img src="{% static 'coffee.jpg' %}"alt="coffee" />
+           
+        </div> 
+        <div class="column">
+            {% load static %} <img src="{% static 'nuts-food-wallpaper-preview.jpg' %}"alt="coffee"  />
+            {% load static %} <img src="{% static 'pasta.jpg' %}"alt="coffee" />
+            
+        
+        </div> 
+      </div>
+      </div>
+     
+
+
+</body>
+</html>
+    </section>
+</body>
+
+</html>
